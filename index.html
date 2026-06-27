@@ -193,12 +193,37 @@ header.scrolled .nav{padding:13px 0}
 .hero p.lead strong{color:var(--text);font-weight:500}
 .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:56px}
 
-.hero-stats{display:flex;gap:48px;flex-wrap:wrap}
-.hero-stats .stat .num{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.4vw,2.6rem);color:var(--text);line-height:1}
-.hero-stats .stat .num b{color:var(--gold-new)} /* DEĞİŞTİ */
-.hero-stats .stat .lbl{font-size:.82rem;color:var(--muted-2);margin-top:8px;letter-spacing:.04em}
-.hero-stats .stat{position:relative;padding-right:48px}
-.hero-stats .stat:not(:last-child)::after{content:"";position:absolute;right:0;top:6px;bottom:6px;width:1px;background:var(--line)}
+.hero-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 sütunlu grid yapısı */
+  gap: 20px 16px;
+  width: 100%;
+}
+
+.hero-stats .stat {
+  padding-right: 0;
+  text-align: center; /* Ortalamak için */
+  position: relative;
+}
+
+.hero-stats .stat .num {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  color: var(--text);
+  line-height: 1;
+}
+
+.hero-stats .stat .lbl {
+  font-size: .82rem;
+  color: var(--muted-2);
+  margin-top: 8px;
+  letter-spacing: .04em;
+}
+
+/* Mobilde çizgileri kaldır */
+.hero-stats .stat:not(:last-child)::after {
+  display: none;
+}
 
 .scroll-cue{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);font-size:.7rem;letter-spacing:.25em;color:var(--muted-2);text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:10px}
 .scroll-cue .bar{width:1px;height:42px;background:linear-gradient(var(--gold),transparent);position:relative;overflow:hidden}
