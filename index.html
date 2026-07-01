@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#0a0a0b" />
-<title>ZKolay — Faizsiz, Kredisiz, Taksitle Ev Sahibi Olun</title>
+<title>Zkolay — Faizsiz, Kredisiz, Taksitle Ev Sahibi Olun</title>
 <meta name="description" content="Zkolay, seçili projelerde faizsiz ve kredisiz, düşük peşinatla taksitli konut edinme imkânı sunan premium gayrimenkul platformudur." />
 
 <!-- Open Graph -->
@@ -164,7 +164,7 @@ header.scrolled .nav{padding:13px 0}
 @media(max-width:720px){.fab{display:flex}}
 
 /* ============ HERO ============ */
-.hero{position:relative;min-height:82vh;display:flex;align-items:center;padding-top:150px;padding-bottom:64px;overflow:hidden}
+.hero{position:relative;min-height:auto;display:flex;align-items:center;padding-top:150px;padding-bottom:20px;overflow:hidden}
 .hero-bg{position:absolute;inset:0;z-index:-2}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center right;opacity:.9;transform:scale(1.12);animation:slowzoom 20s ease-out forwards}
 @keyframes slowzoom{to{transform:scale(1)}}
@@ -219,15 +219,6 @@ header.scrolled .nav{padding:13px 0}
 .hero-stats .stat .lbl{font-size:.82rem;color:var(--muted-2);margin-top:8px;letter-spacing:.04em}
 .hero-stats .stat:not(:last-child)::after{display:none}
 
-/* Hero altında premium "aşağı kaydır" göstergesi (fare hattı + inen altın nokta) */
-.scroll-hint{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:3;display:block;line-height:0;
-  filter:drop-shadow(0 4px 12px rgba(0,0,0,.5));animation:shFade .9s var(--ease) 1.2s both}
-.scroll-hint .sh-mouse{display:block;width:27px;height:44px;border:2px solid rgba(255,255,255,.6);border-radius:15px;position:relative;transition:border-color .3s var(--ease)}
-.scroll-hint .sh-wheel{position:absolute;left:50%;top:8px;width:3.5px;height:9px;border-radius:3px;background:var(--gold-soft);transform:translateX(-50%);animation:shWheel 1.8s var(--ease) infinite}
-.scroll-hint:hover .sh-mouse{border-color:var(--gold-soft)}
-@keyframes shWheel{0%{opacity:0;transform:translate(-50%,0)}25%{opacity:1}70%{opacity:1;transform:translate(-50%,15px)}100%{opacity:0;transform:translate(-50%,15px)}}
-@keyframes shFade{from{opacity:0;transform:translate(-50%,-8px)}to{opacity:1;transform:translate(-50%,0)}}
-
 
 /* ============ AVANTAJLAR ============ */
 .advantages{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -242,7 +233,9 @@ header.scrolled .nav{padding:13px 0}
 
 /* ============ PROJELER ============ */
 /* Hero'ya yakın dursun ki ilk ilanların üstü açılışta görünsün */
-#projeler{padding-top:clamp(26px,3.5vw,48px)}
+#projeler{padding-top:clamp(20px,3vw,40px)}
+/* Bu bölümde reveal efekti YOK — açılışta hemen görünür (kaydırma beklemez) */
+#projeler .reveal{opacity:1;transform:none}
 .proj-top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px}
 .filters{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
 .chip{padding:9px 18px;border-radius:50px;border:1px solid var(--line-strong);font-size:.85rem;color:var(--muted);
@@ -357,8 +350,6 @@ footer{background:var(--bg-soft);border-top:1px solid var(--line);padding-top:70
   .hero-bg img{object-position:66% center;transform:none;animation:none}
   /* Başlık mobilde büyüsün ama tek satırda kalsın (olun. alta düşmesin) */
   .hero h1{font-size:min(2.7rem,7.5vw)}
-  /* Mobilde scroll-hint gizli — bölüm zaten peek ediyor */
-  .scroll-hint{display:none}
   .hero-stats{gap:18px 12px}
   .hero-stats .stat{padding-right:0}
   .adv-grid{grid-template-columns:1fr}
@@ -449,9 +440,6 @@ footer{background:var(--bg-soft);border-top:1px solid var(--line);padding-top:70
       </p>
     </div>
   </div>
-  <a href="#projeler" class="scroll-hint" aria-label="Aşağı kaydır">
-    <span class="sh-mouse"><span class="sh-wheel"></span></span>
-  </a>
 </section>
 
 <!-- ===== PROJELER ===== -->
