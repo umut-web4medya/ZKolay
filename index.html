@@ -337,7 +337,9 @@ footer{background:var(--bg-soft);border-top:1px solid var(--line);padding-top:70
   .nav-links{display:none}
   .nav-cta .btn{display:none}
   .burger{display:flex}
-  .hero{padding-top:140px;min-height:auto;padding-bottom:80px}
+  .hero{padding-top:120px;min-height:100vh;min-height:100svh;padding-bottom:90px}
+  /* Mobilde geniş banner'ı daha "tam" göster: zoom'u kaldır (kırpmayı azaltır) + odağı villaya sabitle */
+  .hero-bg img{object-position:66% center;transform:none;animation:none}
   .hero-stats{gap:18px 12px}
   .hero-stats .stat{padding-right:0}
   .adv-grid{grid-template-columns:1fr}
