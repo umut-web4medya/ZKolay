@@ -351,12 +351,14 @@ footer{background:var(--bg-soft);border-top:1px solid var(--line);padding-top:70
   .burger{display:flex}
   /* nav-links gizlenince grid'i 2 kolona indir: logo solda, dil+menü sağda (ortada kalmasın) */
   .nav{grid-template-columns:1fr auto}
-  /* Hero'yu orantıla: ekranı tam doldurmasın ki altta "Seçili Projeler" bir miktar görünsün */
-  .hero{padding-top:104px;min-height:80vh;min-height:80svh;padding-bottom:30px}
+  /* Hero içeriğe göre daralsın (boş alan kalmasın) → Seçili Projeler açılışta hemen altta görünür */
+  .hero{padding-top:96px;min-height:auto;padding-bottom:22px}
   /* Mobilde geniş banner'ı daha "tam" göster: zoom'u kaldır (kırpmayı azaltır) + odağı villaya sabitle */
   .hero-bg img{object-position:66% center;transform:none;animation:none}
-  /* Başlık mobilde tek satırda kalsın (olun. alta düşmesin) */
-  .hero h1{font-size:min(2.4rem,6.3vw)}
+  /* Başlık mobilde büyüsün ama tek satırda kalsın (olun. alta düşmesin) */
+  .hero h1{font-size:min(2.7rem,7.5vw)}
+  /* Mobilde scroll-hint gizli — bölüm zaten peek ediyor */
+  .scroll-hint{display:none}
   .hero-stats{gap:18px 12px}
   .hero-stats .stat{padding-right:0}
   .adv-grid{grid-template-columns:1fr}
