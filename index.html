@@ -139,21 +139,26 @@ header.scrolled .nav{padding:13px 0}
 .mobile-menu a:hover{color:var(--gold)}
 
 /* ---- Mobil yüzen butonlar (WhatsApp + Ara) ---- */
-.fab{position:fixed;right:16px;bottom:18px;z-index:90;display:none;flex-direction:column;gap:13px}
-.fab a{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;position:relative;
-  box-shadow:0 12px 28px -8px rgba(0,0,0,.65);transition:transform .25s var(--ease);
+.fab{position:fixed;right:16px;bottom:18px;z-index:90;display:none;flex-direction:column;gap:14px}
+.fab a{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;position:relative;
+  border:1px solid rgba(255,255,255,.16);
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease);
   animation:fabIn .5s var(--ease) both}
 .fab a:nth-child(2){animation-delay:.1s}
-.fab a:active{transform:scale(.9)}
+.fab a:hover{transform:translateY(-3px)}
+.fab a:active{transform:scale(.92)}
 .fab a svg{position:relative;z-index:1}
-.fab .wa{background:#25af5a;color:#fff}
+/* WhatsApp — premium yeşil degrade + renkli glow + iç parlama */
+.fab .wa{background:linear-gradient(150deg,#2bd66a,#17a24c);color:#fff;
+  box-shadow:0 14px 30px -8px rgba(37,175,90,.6),inset 0 1px 0 rgba(255,255,255,.35)}
 .fab .wa svg{width:30px;height:30px;fill:currentColor}
-.fab .call{background:var(--gold-new);color:#1a1408}
-.fab .call svg{width:25px;height:25px;stroke:#1a1408;fill:none}
+/* Arama — premium MAVİ degrade + mavi glow + iç parlama */
+.fab .call{background:linear-gradient(150deg,#4a90ff,#1b53d6);color:#fff;
+  box-shadow:0 14px 30px -8px rgba(43,109,255,.65),inset 0 1px 0 rgba(255,255,255,.35)}
+.fab .call svg{width:25px;height:25px;stroke:#fff;fill:none}
 .fab a::after{content:"";position:absolute;inset:0;border-radius:50%;animation:fabPulse 2.4s infinite}
-.fab .wa::after{border:2px solid #25af5a}
-.fab .call::after{border:2px solid var(--gold-new)}
-.fab .call::after{animation-delay:1.2s}
+.fab .wa::after{border:2px solid rgba(43,214,106,.55)}
+.fab .call::after{border:2px solid rgba(74,144,255,.6);animation-delay:1.2s}
 @keyframes fabPulse{0%{transform:scale(1);opacity:.65}100%{transform:scale(1.6);opacity:0}}
 @keyframes fabIn{from{opacity:0;transform:translateY(20px) scale(.7)}to{opacity:1;transform:none}}
 @media(max-width:720px){.fab{display:flex}}
@@ -337,7 +342,10 @@ footer{background:var(--bg-soft);border-top:1px solid var(--line);padding-top:70
   .nav-links{display:none}
   .nav-cta .btn{display:none}
   .burger{display:flex}
-  .hero{padding-top:120px;min-height:100vh;min-height:100svh;padding-bottom:90px}
+  /* nav-links gizlenince grid'i 2 kolona indir: logo solda, dil+menü sağda (ortada kalmasın) */
+  .nav{grid-template-columns:1fr auto}
+  /* Hero'yu orantıla: ekranı tam doldurmasın ki altta "Seçili Projeler" bir miktar görünsün */
+  .hero{padding-top:104px;min-height:80vh;min-height:80svh;padding-bottom:30px}
   /* Mobilde geniş banner'ı daha "tam" göster: zoom'u kaldır (kırpmayı azaltır) + odağı villaya sabitle */
   .hero-bg img{object-position:66% center;transform:none;animation:none}
   .hero-stats{gap:18px 12px}
