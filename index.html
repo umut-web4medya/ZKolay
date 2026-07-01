@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#0a0a0b" />
 <title>Zkolay — Faizsiz, Kredisiz, Taksitle Ev Sahibi Olun</title>
-<meta name="description" content="ZKolay, seçili projelerde faizsiz ve kredisiz, düşük peşinatla taksitli konut edinme imkânı sunan premium gayrimenkul platformudur." />
+<meta name="description" content="Zkolay, seçili projelerde faizsiz ve kredisiz, düşük peşinatla taksitli konut edinme imkânı sunan premium gayrimenkul platformudur." />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
@@ -27,11 +27,10 @@
   --text:#f4f1ea;
   --muted:#a3a09a;
   --muted-2:#76746f;
-  /* LUXURYLIVINGATHENS.GR ALTIN TONLARI - VURGULU */
-  --gold:#C7A15B;
-  --gold-soft:#E8D5A3;  /* Daha parlak, vurgulu */
-  --gold-deep:#A8874A;
-  --gold-new:#e09c0a; /* YENİ VURGULU ALTIN RENGİ */
+  --gold:#c9a14a;
+  --gold-soft:#e3c987;
+  --gold-deep:#9c7a2e;
+  --gold-new:#e09c0a;
   --radius:18px;
   --maxw:1240px;
   --shadow:0 30px 60px -25px rgba(0,0,0,.7);
@@ -55,40 +54,18 @@ ul{list-style:none}
 
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 .gold{color:var(--gold)}
-.gold-new{color:var(--gold-new);}
-
-/* ---- VURGULU BAŞLIK STİLİ (Eyebrow) ---- */
+.gold-new{color:var(--gold-new)}
 .eyebrow{
   display:inline-flex;align-items:center;gap:9px;
   font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
   color:var(--gold-soft);font-weight:600;margin-bottom:18px;
 }
-.eyebrow::before{content:"";width:26px;height:1px;background:var(--gold-soft); opacity:0.8;}
-
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--gold-soft);opacity:.8}
 .section{padding:clamp(70px,9vw,130px) 0}
 .section-head{max-width:680px;margin-bottom:54px}
 .section-head h2{font-size:clamp(2rem,4.4vw,3.1rem);margin-bottom:16px}
-.section-head h2 .highlight{color:var(--gold-new);}
-
-/* ============ LOGO (Header & Footer) ============ */
-.logo {
-    display: flex;
-    align-items: center;
-    line-height: 1;
-    gap: 9px;
-}
-
-.logo img {
-    height: 42px; 
-    width: auto;
-    display: block;
-}
-
-@media (max-width: 720px) {
-    .logo img {
-        height: 32px;
-    }
-}
+.section-head h2 .highlight{color:var(--gold-new)}
+.section-head p{color:var(--muted);font-size:1.05rem;font-weight:300}
 
 /* ============ BUTONLAR ============ */
 .btn{
@@ -99,11 +76,11 @@ ul{list-style:none}
 }
 .btn-gold{
   background:linear-gradient(135deg,var(--gold-soft),var(--gold) 55%,var(--gold-deep));
-  color:#1a1408;box-shadow:0 14px 34px -12px rgba(199,161,91,.6);
+  color:#1a1408;box-shadow:0 14px 34px -12px rgba(201,161,74,.6);
 }
-.btn-gold:hover{transform:translateY(-3px);box-shadow:0 22px 44px -12px rgba(199,161,91,.75)}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 22px 44px -12px rgba(201,161,74,.75)}
 .btn-ghost{border-color:var(--line-strong);color:var(--text);background:rgba(255,255,255,.02)}
-.btn-ghost:hover{border-color:var(--gold);color:var(--gold-soft);background:rgba(199,161,91,.06)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-soft);background:rgba(201,161,74,.06)}
 .btn svg{width:17px;height:17px}
 
 /* ============ HEADER ============ */
@@ -121,6 +98,9 @@ header{
 .nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0;transition:padding .4s var(--ease)}
 header.scrolled{background:rgba(10,10,11,.82);backdrop-filter:blur(18px);border-color:var(--line)}
 header.scrolled .nav{padding:13px 0}
+.logo{display:flex;align-items:center;line-height:1;gap:9px}
+.logo img{height:42px;width:auto;display:block}
+@media(max-width:720px){.logo img{height:32px}}
 .nav-links{display:flex;gap:34px;align-items:center}
 .nav-links a{font-size:.92rem;color:var(--muted);font-weight:500;position:relative;transition:color .3s}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--gold);transition:width .3s var(--ease)}
@@ -129,6 +109,13 @@ header.scrolled .nav{padding:13px 0}
 .nav-cta{display:flex;align-items:center;gap:16px}
 .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:0}
 .burger span{width:24px;height:2px;background:var(--text);transition:.3s var(--ease)}
+
+/* ---- Dil seçici (TR/EN/RU/AR) ---- */
+.lang-switch{display:inline-flex;align-items:center;gap:2px;padding:3px;border:1px solid var(--line-strong);border-radius:50px;background:rgba(255,255,255,.03)}
+.lang-switch button{border:0;background:transparent;cursor:pointer;font-family:'Inter',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.03em;color:var(--muted);padding:6px 10px;border-radius:50px;transition:color .25s var(--ease),background .25s var(--ease)}
+.lang-switch button:hover{color:var(--text)}
+.lang-switch button.active{background:var(--gold-new);color:#1a1408}
+@media(max-width:720px){.lang-switch{gap:0}.lang-switch button{padding:5px 7px;font-size:.72rem}}
 
 /* mobil menü */
 .mobile-menu{
@@ -163,16 +150,16 @@ header.scrolled .nav{padding:13px 0}
 /* ============ HERO ============ */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding-top:150px;padding-bottom:130px;overflow:hidden}
 .hero-bg{position:absolute;inset:0;z-index:-2}
-.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.42;transform:scale(1.08);animation:slowzoom 22s ease-out forwards}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center right;opacity:.72;transform:scale(1.12);animation:slowzoom 20s ease-out forwards}
 @keyframes slowzoom{to{transform:scale(1)}}
 .hero-bg::after{
   content:"";position:absolute;inset:0;
   background:
-    radial-gradient(120% 90% at 15% 20%,rgba(10,10,11,.35),rgba(10,10,11,.92) 70%),
-    linear-gradient(180deg,rgba(10,10,11,.55),rgba(10,10,11,.6) 50%,var(--bg) 96%);
+    linear-gradient(90deg,rgba(10,10,11,.92) 0%,rgba(10,10,11,.72) 34%,rgba(10,10,11,.32) 62%,rgba(10,10,11,.12) 100%),
+    linear-gradient(180deg,rgba(10,10,11,.45),rgba(10,10,11,.3) 45%,var(--bg) 97%);
 }
 .hero-glow{position:absolute;top:-10%;right:-5%;width:680px;height:680px;border-radius:50%;
-  background:radial-gradient(circle,rgba(199,161,91,.16),transparent 65%);z-index:-1;filter:blur(20px)}
+  background:radial-gradient(circle,rgba(201,161,74,.16),transparent 65%);z-index:-1;filter:blur(20px)}
 
 .hero-inner{max-width:840px}
 .hero-badge{
@@ -185,45 +172,30 @@ header.scrolled .nav{padding:13px 0}
 .hero-badge .pulse::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--gold);animation:pulse 2s infinite}
 @keyframes pulse{0%{transform:scale(.8);opacity:1}100%{transform:scale(2.2);opacity:0}}
 
-.hero h1{font-size:clamp(2.6rem,7vw,5.3rem);margin-bottom:24px;font-weight:600}
+.hero h1{font-family:Arial,"Helvetica Neue",Helvetica,"Segoe UI",sans-serif;font-size:clamp(2.6rem,7vw,5.4rem);line-height:1.05;margin-bottom:24px;font-weight:800;letter-spacing:-.02em}
 .hero h1 .line{display:block;overflow:hidden}
 .hero h1 .line>span{display:block}
-.hero h1 em{font-style:normal;color:var(--gold-new);position:relative} /* DEĞİŞTİ */
+.hero h1 em{font-style:normal;color:var(--gold);position:relative}
 .hero p.lead{font-size:clamp(1.05rem,2.2vw,1.3rem);color:var(--muted);font-weight:300;max-width:620px;margin-bottom:38px}
 .hero p.lead strong{color:var(--text);font-weight:500}
 .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:56px}
 
-.hero-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 sütunlu grid yapısı */
-  gap: 20px 16px;
-  width: 100%;
-}
+/* ---- "Faiz Yok! Kredi Yok!" vurgulu rozetler ---- */
+.hero-flags{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 26px}
+.hero-flags .flag-chip{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border-radius:50px;font-weight:800;font-size:clamp(.95rem,2.2vw,1.18rem);letter-spacing:.01em;color:#1a1408;background:linear-gradient(135deg,var(--gold-soft),var(--gold-new) 60%,var(--gold-deep));box-shadow:0 10px 26px -10px rgba(224,156,10,.65);animation:flagPop .6s var(--ease) both,flagPulse 2.2s var(--ease) 1s infinite}
+.hero-flags .flag-chip:nth-child(2){animation-delay:.16s,1.16s}
+.hero-flags .flag-chip svg{width:16px;height:16px;stroke:#1a1408;stroke-width:3}
+.hero-flags .flag-chip::after{content:"";position:absolute;top:0;left:-60%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);animation:flagShine 3.4s ease-in-out 1.6s infinite}
+@keyframes flagPop{from{opacity:0;transform:translateY(14px) scale(.85)}to{opacity:1;transform:none}}
+@keyframes flagPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+@keyframes flagShine{0%{left:-60%}55%,100%{left:135%}}
 
-.hero-stats .stat {
-  padding-right: 0;
-  text-align: center; /* Ortalamak için */
-  position: relative;
-}
-
-.hero-stats .stat .num {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
-  color: var(--text);
-  line-height: 1;
-}
-
-.hero-stats .stat .lbl {
-  font-size: .82rem;
-  color: var(--muted-2);
-  margin-top: 8px;
-  letter-spacing: .04em;
-}
-
-/* Mobilde çizgileri kaldır */
-.hero-stats .stat:not(:last-child)::after {
-  display: none;
-}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:20px 16px;width:100%}
+.hero-stats .stat{position:relative;padding-right:0;text-align:center}
+.hero-stats .stat .num{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.4vw,2.6rem);color:var(--text);line-height:1}
+.hero-stats .stat .num b{color:var(--gold-new)}
+.hero-stats .stat .lbl{font-size:.82rem;color:var(--muted-2);margin-top:8px;letter-spacing:.04em}
+.hero-stats .stat:not(:last-child)::after{display:none}
 
 .scroll-cue{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);font-size:.7rem;letter-spacing:.25em;color:var(--muted-2);text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:10px}
 .scroll-cue .bar{width:1px;height:42px;background:linear-gradient(var(--gold),transparent);position:relative;overflow:hidden}
@@ -236,7 +208,7 @@ header.scrolled .nav{padding:13px 0}
 .adv{background:var(--bg-soft);padding:38px 30px;transition:background .4s var(--ease)}
 .adv:hover{background:var(--bg-card)}
 .adv .ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;margin-bottom:22px;
-  background:linear-gradient(135deg,rgba(199,161,91,.18),rgba(199,161,91,.04));border:1px solid rgba(199,161,91,.25)}
+  background:linear-gradient(135deg,rgba(201,161,74,.18),rgba(201,161,74,.04));border:1px solid rgba(201,161,74,.25)}
 .adv .ic svg{width:26px;height:26px;stroke:var(--gold-soft)}
 .adv h3{font-size:1.18rem;margin-bottom:10px}
 .adv p{font-size:.92rem;color:var(--muted);font-weight:300}
@@ -247,7 +219,7 @@ header.scrolled .nav{padding:13px 0}
 .chip{padding:9px 18px;border-radius:50px;border:1px solid var(--line-strong);font-size:.85rem;color:var(--muted);
   cursor:pointer;transition:.3s var(--ease);background:transparent;font-weight:500}
 .chip:hover{color:var(--text);border-color:var(--gold-soft)}
-.chip.active{background:var(--gold-new);color:#1a1408;border-color:var(--gold-new)} /* DEĞİŞTİ */
+.chip.active{background:var(--gold-new);color:#1a1408;border-color:var(--gold-new)}
 #moreBtn .chev{width:17px;height:17px;transition:transform .35s var(--ease)}
 #moreBtn.is-open .chev{transform:rotate(180deg)}
 
@@ -264,7 +236,7 @@ header.scrolled .nav{padding:13px 0}
 .card-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(10,10,11,.85))}
 .badge-faiz{
   position:absolute;top:14px;left:14px;z-index:2;display:inline-flex;align-items:center;gap:6px;
-  background:rgba(10,10,11,.7);backdrop-filter:blur(8px);border:1px solid rgba(199,161,91,.4);
+  background:rgba(10,10,11,.7);backdrop-filter:blur(8px);border:1px solid rgba(201,161,74,.4);
   color:var(--gold-soft);font-size:.72rem;font-weight:600;padding:7px 13px;border-radius:50px;letter-spacing:.03em;
 }
 .card-loc{position:absolute;bottom:14px;left:16px;z-index:2;display:flex;align-items:center;gap:7px;font-size:.85rem;color:#e9e6df}
@@ -282,14 +254,14 @@ header.scrolled .nav{padding:13px 0}
 .price .ay{font-size:.78rem;color:var(--muted);display:block;margin-top:2px}
 .card-link{width:44px;height:44px;border-radius:50%;border:1px solid var(--line-strong);display:grid;place-items:center;transition:.35s var(--ease)}
 .card-link svg{width:18px;height:18px;stroke:var(--text);transition:.35s var(--ease)}
-.card:hover .card-link{background:var(--gold-new);border-color:var(--gold-new)} /* DEĞİŞTİ */
+.card:hover .card-link{background:var(--gold-new);border-color:var(--gold-new)}
 .card:hover .card-link svg{stroke:#1a1408;transform:translate(2px,-2px)}
 
 /* ============ NASIL ÇALIŞIR ============ */
 .how{background:var(--bg-soft);border-top:1px solid var(--line)}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:step;margin-top:20px}
 .step{position:relative;padding-top:30px}
-.step .no{font-family:'Playfair Display',serif;font-size:3.2rem;color:transparent;-webkit-text-stroke:1px var(--gold-new);line-height:1;margin-bottom:18px} /* DEĞİŞTİ */
+.step .no{font-family:'Playfair Display',serif;font-size:3.2rem;color:transparent;-webkit-text-stroke:1px var(--gold-new);line-height:1;margin-bottom:18px}
 .step h3{font-size:1.2rem;margin-bottom:10px}
 .step p{font-size:.92rem;color:var(--muted);font-weight:300}
 .step:not(:last-child)::before{content:"";position:absolute;top:46px;right:-12px;width:24px;height:1px;background:var(--line-strong)}
@@ -297,17 +269,17 @@ header.scrolled .nav{padding:13px 0}
 /* ============ İSTATİSTİK / GÜVEN ============ */
 .trust{position:relative;overflow:hidden}
 .trust-glow{position:absolute;bottom:-40%;left:50%;transform:translateX(-50%);width:900px;height:600px;
-  background:radial-gradient(circle,rgba(199,161,91,.1),transparent 60%);z-index:0;filter:blur(10px)}
+  background:radial-gradient(circle,rgba(201,161,74,.1),transparent 60%);z-index:0;filter:blur(10px)}
 .trust .wrap{position:relative;z-index:1}
 .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
 .stat-grid .big{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,3.6rem);color:var(--gold-soft);line-height:1}
 .stat-grid .cap{font-size:.9rem;color:var(--muted);margin-top:10px}
 
 /* ============ CTA ============ */
-.cta-band{background:linear-gradient(135deg,#15110a,#0d0d0e);border:1px solid rgba(199,161,91,.25);border-radius:24px;
+.cta-band{background:linear-gradient(135deg,#15110a,#0d0d0e);border:1px solid rgba(201,161,74,.25);border-radius:24px;
   padding:clamp(40px,6vw,72px);text-align:center;position:relative;overflow:hidden}
 .cta-band::before{content:"";position:absolute;top:-50%;right:-10%;width:500px;height:500px;
-  background:radial-gradient(circle,rgba(199,161,91,.14),transparent 60%);filter:blur(10px)}
+  background:radial-gradient(circle,rgba(201,161,74,.14),transparent 60%);filter:blur(10px)}
 .cta-band h2{font-size:clamp(2rem,4.6vw,3rem);margin-bottom:16px;position:relative}
 .cta-band p{color:var(--muted);max-width:560px;margin:0 auto 32px;font-weight:300;position:relative}
 .cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative}
@@ -326,7 +298,7 @@ footer{background:var(--bg-soft);border-top:1px solid var(--line);padding-top:70
   color:var(--muted-2);font-size:.84rem}
 .foot-bottom .socials{display:flex;gap:14px}
 .foot-bottom .socials a{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:.3s}
-.foot-bottom .socials a:hover{border-color:var(--gold);background:rgba(199,161,91,.08)}
+.foot-bottom .socials a:hover{border-color:var(--gold);background:rgba(201,161,74,.08)}
 .foot-bottom .socials svg{width:16px;height:16px;stroke:var(--muted)}
 .foot-bottom .socials a:hover svg{stroke:var(--gold-soft)}
 
@@ -349,6 +321,8 @@ footer{background:var(--bg-soft);border-top:1px solid var(--line);padding-top:70
   .nav-cta .btn{display:none}
   .burger{display:flex}
   .hero{padding-top:140px;min-height:auto;padding-bottom:80px}
+  .hero-stats{gap:18px 12px}
+  .hero-stats .stat{padding-right:0}
   .adv-grid{grid-template-columns:1fr}
   .proj-grid{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr}
@@ -373,19 +347,20 @@ footer{background:var(--bg-soft);border-top:1px solid var(--line);padding-top:70
   </div>
   <div class="wrap">
     <nav class="nav">
-     <a href="#" class="logo">
-    <img src="https://github.com/umut-web4medya/ZKolay/blob/main/images/zkolay-logo.png?raw=true" 
-         alt="Zkolay Logo" 
-         style="height: 42px; width: auto; display: block;" />
-</a>
+      <a href="#" class="logo" aria-label="Zkolay"><img src="https://github.com/umut-web4medya/ZKolay/blob/main/images/zkolay-logo.png?raw=true" alt="Zkolay" /></a>
       <ul class="nav-links">
         <li><a href="#projeler">Projeler</a></li>
         <li><a href="#nasil">Nasıl Çalışır</a></li>
         <li><a href="#avantajlar">Avantajlar</a></li>
-        <li><a href="#guven">Hakkımızda</a></li>
         <li><a href="#iletisim">İletişim</a></li>
       </ul>
       <div class="nav-cta">
+        <div class="lang-switch" id="langSwitch" role="group" aria-label="Dil / Language">
+          <button type="button" data-lang="tr" class="active">TR</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="ru">RU</button>
+          <button type="button" data-lang="ar">AR</button>
+        </div>
         <a href="#iletisim" class="btn btn-gold">Ödeme Planı Al</a>
         <button class="burger" id="burger" aria-label="Menü"><span></span><span></span><span></span></button>
       </div>
@@ -398,7 +373,6 @@ footer{background:var(--bg-soft);border-top:1px solid var(--line);padding-top:70
   <a href="#projeler">Projeler</a>
   <a href="#nasil">Nasıl Çalışır</a>
   <a href="#avantajlar">Avantajlar</a>
-  <a href="#guven">Hakkımızda</a>
   <a href="#iletisim">İletişim</a>
   <a href="#iletisim" class="gold-new" style="font-size:1.2rem;margin-top:14px">Ödeme Planı Al →</a>
 </div>
@@ -406,12 +380,16 @@ footer{background:var(--bg-soft);border-top:1px solid var(--line);padding-top:70
 <!-- ===== HERO ===== -->
 <section class="hero">
   <div class="hero-bg">
-    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1920&q=70" alt="Premium konut projesi" fetchpriority="high" />
+    <img src="https://umut-web4medya.github.io/ZKolay/images/banner.jpeg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1920&q=70'" alt="Zkolay — faizsiz, kredisiz konut projeleri" fetchpriority="high" />
   </div>
   <div class="hero-glow"></div>
   <div class="wrap">
     <div class="hero-inner">
       <span class="hero-badge"><span class="pulse"></span> Faizsiz &amp; Kredisiz Konut Edinme Platformu</span>
+      <div class="hero-flags">
+        <span class="flag-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg> Faiz Yok!</span>
+        <span class="flag-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg> Kredi Yok!</span>
+      </div>
       <h1>
         <span class="line"><span class="r">Faizsiz. Kredisiz.</span></span>
         <span class="line"><span class="r"><em>Taksitle</em> ev sahibi olun.</span></span>
@@ -428,17 +406,44 @@ footer{background:var(--bg-soft);border-top:1px solid var(--line);padding-top:70
         </a>
         <a href="#nasil" class="btn btn-ghost">Nasıl Çalışır?</a>
       </div>
-      <div class="hero-stats">
-        <div class="stat"><div class="num"><b>%0</b></div><div class="lbl">Faiz Oranı</div></div>
-        <div class="stat"><div class="num" data-count="25" data-suffix="%">%25</div><div class="lbl">Düşük Peşinat</div></div>
-        <div class="stat"><div class="num" data-count="40" data-suffix="+">40+</div><div class="lbl">Seçili Proje</div></div>
-        <div class="stat"><div class="num" data-count="3200" data-suffix="+">3.200+</div><div class="lbl">Mutlu Aile</div></div>
-      </div>
     </div>
   </div>
   <div class="scroll-cue"><span>Keşfet</span><span class="bar"></span></div>
 </section>
-  
+
+<!-- ===== AVANTAJLAR ===== -->
+<section class="advantages section" id="avantajlar">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Neden Zkolay</span>
+      <h2>Bankaya değil, hayalinize yatırım yapın</h2>
+      <p>Geleneksel konut kredisinin yükü olmadan, faiz ödemeden, tamamen şeffaf bir taksit sistemiyle ev sahibi olun.</p>
+    </div>
+    <div class="adv-grid">
+      <div class="adv reveal d1">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg></div>
+        <h3>Faizsiz Ödeme</h3>
+        <p>Hiçbir aşamada faiz yok. Anlaştığınız fiyat değişmez, ödediğiniz tutar bellidir.</p>
+      </div>
+      <div class="adv reveal d2">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg></div>
+        <h3>Kredisiz Süreç</h3>
+        <p>Bankaya başvuru, onay bekleme ya da kredi notu derdi yok. Süreç tamamen size ait.</p>
+      </div>
+      <div class="adv reveal d3">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 3v18M7 8h7a3 3 0 010 6H9a3 3 0 000 6h8"/></svg></div>
+        <h3>Düşük Peşinat</h3>
+        <p>%25'ten başlayan peşinat oranlarıyla, beklemeden ev sahibi olma yolculuğuna başlayın.</p>
+      </div>
+      <div class="adv reveal d4">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div>
+        <h3>Esnek Taksit</h3>
+        <p>Bütçenize göre planlanan, uzun vadeli ve şeffaf taksit seçenekleriyle rahat ödeme.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== PROJELER ===== -->
 <section class="section" id="projeler">
   <div class="wrap">
@@ -730,39 +735,6 @@ footer{background:var(--bg-soft);border-top:1px solid var(--line);padding-top:70
   </div>
 </section>
 
-  <!-- ===== AVANTAJLAR ===== -->
-<section class="advantages section" id="avantajlar">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Neden Zkolay</span>
-      <h2>Bankaya değil, hayalinize yatırım yapın</h2>
-      <p>Geleneksel konut kredisinin yükü olmadan, faiz ödemeden, tamamen şeffaf bir taksit sistemiyle ev sahibi olun.</p>
-    </div>
-    <div class="adv-grid">
-      <div class="adv reveal d1">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg></div>
-        <h3>Faizsiz Ödeme</h3>
-        <p>Hiçbir aşamada faiz yok. Anlaştığınız fiyat değişmez, ödediğiniz tutar bellidir.</p>
-      </div>
-      <div class="adv reveal d2">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg></div>
-        <h3>Kredisiz Süreç</h3>
-        <p>Bankaya başvuru, onay bekleme ya da kredi notu derdi yok. Süreç tamamen size ait.</p>
-      </div>
-      <div class="adv reveal d3">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 3v18M7 8h7a3 3 0 010 6H9a3 3 0 000 6h8"/></svg></div>
-        <h3>Düşük Peşinat</h3>
-        <p>%25'ten başlayan peşinat oranlarıyla, beklemeden ev sahibi olma yolculuğuna başlayın.</p>
-      </div>
-      <div class="adv reveal d4">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div>
-        <h3>Esnek Taksit</h3>
-        <p>Bütçenize göre planlanan, uzun vadeli ve şeffaf taksit seçenekleriyle rahat ödeme.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ===== NASIL ÇALIŞIR ===== -->
 <section class="how section" id="nasil">
   <div class="wrap">
@@ -796,23 +768,6 @@ footer{background:var(--bg-soft);border-top:1px solid var(--line);padding-top:70
   </div>
 </section>
 
-<!-- ===== GÜVEN / İSTATİSTİK ===== -->
-<section class="trust section" id="guven">
-  <div class="trust-glow"></div>
-  <div class="wrap">
-    <div class="section-head reveal" style="text-align:center;margin:0 auto 54px">
-      <span class="eyebrow" style="justify-content:center">Rakamlarla Zkolay</span>
-      <h2>Güven, teslim edilen her projeyle büyür</h2>
-    </div>
-    <div class="stat-grid">
-      <div class="reveal d1"><div class="big" data-count="3200" data-suffix="+">3.200+</div><div class="cap">Mutlu Ev Sahibi</div></div>
-      <div class="reveal d2"><div class="big" data-count="40" data-suffix="+">40+</div><div class="cap">Tamamlanan Proje</div></div>
-      <div class="reveal d3"><div class="big" data-count="18" data-suffix="">18</div><div class="cap">Yıllık Tecrübe</div></div>
-      <div class="reveal d4"><div class="big" data-count="100" data-suffix="%">%100</div><div class="cap">Faizsiz İşlem</div></div>
-    </div>
-  </div>
-</section>
-
 <!-- ===== CTA ===== -->
 <section class="section" id="iletisim">
   <div class="wrap">
@@ -836,11 +791,7 @@ footer{background:var(--bg-soft);border-top:1px solid var(--line);padding-top:70
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a href="#" class="logo">
-          <img src="https://github.com/umut-web4medya/ZKolay/blob/main/images/zkolay-logo.png?raw=true" 
-               alt="Zkolay Logo" 
-               style="height: 42px; width: auto; display: block;" />
-        </a>
+        <a href="#" class="logo" aria-label="Zkolay"><img src="https://github.com/umut-web4medya/ZKolay/blob/main/images/zkolay-logo.png?raw=true" alt="Zkolay" /></a>
         <p>Seçili projelerde faizsiz, kredisiz ve düşük peşinatlı taksit imkânıyla ev sahibi olmanın premium yolu.</p>
       </div>
       <div class="foot-col">
@@ -848,7 +799,6 @@ footer{background:var(--bg-soft);border-top:1px solid var(--line);padding-top:70
         <a href="#projeler">Projeler</a>
         <a href="#nasil">Nasıl Çalışır</a>
         <a href="#avantajlar">Avantajlar</a>
-        <a href="#guven">Hakkımızda</a>
       </div>
       <div class="foot-col">
         <h4>Kurumsal</h4>
@@ -970,6 +920,20 @@ moreBtn.addEventListener('click',()=>{
   if(!expanded)document.getElementById('projeler').scrollIntoView({behavior:'smooth',block:'start'});
 });
 render();
+
+/* ---- Dil seçici (arayüz; içerik çevirisi ileride) ---- */
+const langSwitch=document.getElementById('langSwitch');
+if(langSwitch){
+  const store={get(){try{return localStorage.getItem('zk_lang')}catch(e){return null}},set(v){try{localStorage.setItem('zk_lang',v)}catch(e){}}};
+  const setLang=code=>{
+    langSwitch.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.lang===code));
+    store.set(code);
+    /* Not: Şu an yalnızca arayüz durumu güncellenir; tüm metinlerin çevirisi sonraki adımda eklenecek. */
+  };
+  const saved=store.get();
+  if(saved)setLang(saved);
+  langSwitch.addEventListener('click',e=>{const b=e.target.closest('button');if(b)setLang(b.dataset.lang)});
+}
 </script>
 </body>
 </html>
